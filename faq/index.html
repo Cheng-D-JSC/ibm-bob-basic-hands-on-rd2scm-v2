@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bob FAQ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="header-logo" href="https://www.ibm.com/products/bob" target="_blank" rel="noopener noreferrer" aria-label="IBM Bob 公式サイト">
+      <img src="../bob.svg" alt="Bob">
+    </a>
+    <div class="header-title">
+      <h1>Bob FAQ</h1>
+      <p class="site-subtitle">よくある質問と回答</p>
+    </div>
+    <button class="theme-toggle" aria-label="ダークテーマ切替" id="theme-toggle">🌙</button>
+  </header>
+
+  <main class="main-content">
+    <div class="search-area">
+      <input type="text" id="search-input" placeholder="キーワードで検索..." autocomplete="off">
+    </div>
+
+    <div class="category-buttons">
+      <button class="category-btn active" data-category="all">すべて</button>
+      <button class="category-btn" data-category="general">一般</button>
+      <button class="category-btn" data-category="usage">使い方</button>
+      <button class="category-btn" data-category="advanced">高度な機能</button>
+      <button class="category-btn" data-category="troubleshooting">トラブルシューティング</button>
+    </div>
+
+    <div id="faq-list">
+
+      <!-- 一般 -->
+      <section class="faq-category" data-category="general">
+        <h2 class="category-title">一般</h2>
+
+        <div class="faq-item" data-category="general">
+          <button class="faq-question" aria-expanded="false">Bobとは何ですか？</button>
+          <div class="faq-answer">
+            <p>Bobはコードの記述、リファクタリング、各種タスクの支援をするAI搭載のコーディングコンパニオンです。カスタムモードや指示によって機能を拡張できます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="general">
+          <button class="faq-question" aria-expanded="false">Bobはどのように動作しますか？</button>
+          <div class="faq-answer">
+            <p>Bobは大規模言語モデル（LLM）を使用してリクエストを理解し、アクションに変換します。プロジェクトのファイルの読み書き、ターミナルでのコマンド実行、インターネットの閲覧（有効時）、MCPによる外部ツールの利用が可能です。チャット画面から指示し、提案されたアクションを承認または却下できます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="general">
+          <button class="faq-question" aria-expanded="false">Bobは何ができますか？</button>
+          <div class="faq-answer">
+            <p>自然言語によるコード生成、既存コードのリファクタリング、バグ修正、ドキュメント作成、コード説明、コードベースへの質問回答、反復作業の自動化、新規ファイル・プロジェクトの作成などが可能です。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="general">
+          <button class="faq-question" aria-expanded="false">Bobで処理してはいけないデータはありますか？</button>
+          <div class="faq-answer">
+            <p>以下のデータはBobで処理しないでください：SPI、個人医療情報（PHI）、輸出規制対象データ（ITAR、APPなど）、規制対象の金融データ（銀行口座番号、PAN、非公開財務データなど）。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="general">
+          <button class="faq-question" aria-expanded="false">Bobを使用するリスクはありますか？</button>
+          <div class="faq-answer">
+            <p>Bobは強力なツールですが、責任ある利用が必要です。Bobは間違いを犯すことがあるため、提案された変更は必ず慎重に確認してください。またBobはコマンドを実行できるため、特に自動承認を有効にしている場合は注意してください。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 使い方 -->
+      <section class="faq-category" data-category="usage">
+        <h2 class="category-title">使い方</h2>
+
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false">新しいタスクを始めるにはどうすればよいですか？</button>
+          <div class="faq-answer">
+            <p>Bobパネルを開き、チャットボックスにタスクを入力してください。何をしてほしいかを明確かつ具体的に記述してください。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false">モードを切り替えるにはどうすればよいですか？</button>
+          <div class="faq-answer">
+            <p>チャット入力エリアのドロップダウンメニューで別のモードを選択するか、<code>/</code> コマンドで特定のモードに切り替えることができます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false">ツールとは何ですか？どのように使いますか？</button>
+          <div class="faq-answer">
+            <p>ツールはBobがシステムとやり取りする方法です。Bobはタスクを完了するために適切なツールを自動的に選択して使用します。ツールを直接呼び出す必要はありません。ツールの使用ごとに承認または却下を求められます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false">コンテキストメンションとは何ですか？</button>
+          <div class="faq-answer">
+            <p>コンテキストメンションは、ファイル、フォルダ、問題点など、プロジェクトに関する特定の情報をBobに提供する方法です。<code>@</code> 記号の後にメンションしたいアイテムを入力します（例: <code>@/src/file.ts</code>、<code>@problems</code>）。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false">Bobはターミナルでコマンドを実行できますか？</button>
+          <div class="faq-answer">
+            <p>はい、Bobはコマンドを実行できます。コマンドの自動承認を有効にしていない限り、各コマンドの承認を求められます。コマンドの自動承認は十分注意して設定してください。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false">Bobにフィードバックを送るにはどうすればよいですか？</button>
+          <div class="faq-answer">
+            <p>Bobが提案したアクションを承認または却下することでフィードバックできます。フィードバックフィールドを使って追加のコメントを入力することもできます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false">Bobの動作をカスタマイズできますか？</button>
+          <div class="faq-answer">
+            <p>はい、いくつかの方法でカスタマイズできます。カスタム指示（全モード共通またはモード別）、カスタムモード（独自のプロンプトとツール権限）、Bobルール（プロジェクトルートの <code>.bob/rules/</code> フォルダにMarkdownファイルを配置）、各種設定（自動承認、差分編集など）が利用できます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="usage">
+          <button class="faq-question" aria-expanded="false">Bobには自動承認の設定がありますか？</button>
+          <div class="faq-answer">
+            <p>はい、有効にするとアクションを自動承認するいくつかの設定があります。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 高度な機能 -->
+      <section class="faq-category" data-category="advanced">
+        <h2 class="category-title">高度な機能</h2>
+
+        <div class="faq-item" data-category="advanced">
+          <button class="faq-question" aria-expanded="false">MCP（Model Context Protocol）とは何ですか？</button>
+          <div class="faq-answer">
+            <p>MCPはBobが外部サーバーと通信するためのプロトコルで、カスタムツールやリソースを追加してBobの機能を拡張できます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="advanced">
+          <button class="faq-question" aria-expanded="false">独自のMCPサーバーを作成できますか？</button>
+          <div class="faq-answer">
+            <p>はい、独自のMCPサーバーを作成してBobにカスタム機能を追加できます。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- トラブルシューティング -->
+      <section class="faq-category" data-category="troubleshooting">
+        <h2 class="category-title">トラブルシューティング</h2>
+
+        <div class="faq-item" data-category="troubleshooting">
+          <button class="faq-question" aria-expanded="false">Bobが応答しません。どうすればよいですか？</button>
+          <div class="faq-answer">
+            <p>APIキーが正しく、有効期限が切れていないか確認してください。インターネット接続を確認してください。VS Codeを再起動してみてください。</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="troubleshooting">
+          <button class="faq-question" aria-expanded="false">Bobが意図しない変更を加えました。元に戻すにはどうすればよいですか？</button>
+          <div class="faq-answer">
+            <p>BobはVS Codeの組み込みファイル編集機能を使用しています。標準の「元に戻す」コマンド（Ctrl/Cmd + Z）で変更を取り消せます。チェックポイントを使用してファイルへの変更を元に戻すこともできます。</p>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /#faq-list -->
+
+    <p id="no-results" hidden>該当するFAQが見つかりませんでした。</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 IBM Bob Hands-on</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
